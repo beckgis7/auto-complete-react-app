@@ -1,3 +1,15 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  background: #3399ff;
+  padding: 20p
+}
+ul li {
+  background: #cce5ff;
+  margin: 5px;
+  font-size: 2rem;
+}
+
 .App {
   text-align: center ;
 }
@@ -18,3 +30,4 @@
   border-color: cadetblue;
   box-shadow: 2px 3px 4px 2px #a9b3b3;
 }
+
