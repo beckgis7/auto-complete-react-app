@@ -41,15 +41,22 @@ function App() {
   // console.log('ObjectValues', Object.values(search));
 
   const searchItems = search.map((ent,index) => {
+    const d = new Date(ent.created_at);
+    const time = `${d.getUTCHours()}:${d.getUTCMinutes()}`
+    // console.log(d.getUTCHours()); // Hours
+    // console.log(d.getUTCMinutes());
+    // console.log(d.getUTCSeconds());
     return (
-    <div key={index} className="card">
-      <div className="card-header">
+    <div key={index} className="search">
+      <div className="search-header">
         <h3 className="title">{ent.title}</h3>
-        <div className="dateTime"> <span>{ent.created_at}</span>3 days ago</div>
       </div>
       <pre className="article">{ent.comment_text}</pre>
       <link className="url" href=""/>
-      <a className="discussionUrl" href={ent.story_url}>Link ...</a>
+      <div className="search-footer">
+      <a className="url" href={ent.url}>{ent.url}</a>
+        <div className="dateTime"> <span>{time}</span>3 days ago</div>
+      </div>
     </div>);
   }
 
