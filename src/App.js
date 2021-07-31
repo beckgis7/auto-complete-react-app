@@ -6,6 +6,8 @@ import { useEffect, useState } from 'react';
 function App() {
   const [search, setSearch] = useState([])
   const [query, setQuery] = useState('');
+  const [final, setFinal] = useState([])
+
   // const [matches, setMatches] = useState([]);
 
   useEffect(() => {
@@ -42,20 +44,23 @@ function App() {
 
   const searchItems = search.map((ent,index) => {
     const d = new Date(ent.created_at);
-    const time = `${d.getUTCHours()}:${d.getUTCMinutes()}`
+    // const time = `${d.getUTCHours()}:${d.getUTCMinutes()}`
+    const time = `${d.toLocaleString()}`
     // console.log(d.getUTCHours()); // Hours
     // console.log(d.getUTCMinutes());
     // console.log(d.getUTCSeconds());
+    // console.log(d.toLocaleString());
     return (
     <div key={index} className="search">
       <div className="search-header">
         <h3 className="title">{ent.title}</h3>
+        <div className="dateTime">{time}</div>
       </div>
-      <pre className="article">{ent.comment_text}</pre>
+      {/* <pre className="article">{ent.comment_text}</pre> */}
       <link className="url" href=""/>
       <div className="search-footer">
-      <a className="url" href={ent.url}>{ent.url}</a>
-        <div className="dateTime"> <span>{time}</span>3 days ago</div>
+        <a className="url" href={ent.url}>{ent.url}</a>
+        <div className="points">scored: {ent.points} points by <span className="author">{ent.author}</span></div>
       </div>
     </div>);
   }
