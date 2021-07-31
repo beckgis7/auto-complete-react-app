@@ -11,7 +11,9 @@ ul li {
 }
 
 .App {
-  text-align: center ;
+  display: flex;
+  padding: 10%;
+  justify-content: center;
 }
 
 .App-logo {
@@ -30,4 +32,25 @@ ul li {
   border-color: cadetblue;
   box-shadow: 2px 3px 4px 2px #a9b3b3;
 }
-
+.card{
+  border: #769ea0 1px solid;
+  border-radius: 10px;
+  padding:5px;
+  background: cornsilk;
+}
+.card-header{
+  display: flex;
+  justify-content: space-between;
+  background: #a9b3b3;
+}
+.title{
+  margin: 0;
+  font-size: 1rem;
+  color: #4e5050;
+}
+.dateTime{
+  margin: 0;
+}
+.article{
+  margin: 0;
+}

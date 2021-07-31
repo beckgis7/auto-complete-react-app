@@ -37,19 +37,24 @@ function App() {
 
     }
   }
-  console.log('ObjectKeys', Object.keys(search));
-  console.log('ObjectValues', Object.values(search));
-  const searchItems = Object.keys(search).map((ent,index) =>
-    <li key={index}> {ent} </li>
+  // console.log('ObjectKeys', Object.keys(search));
+  // console.log('ObjectValues', Object.values(search));
+
+  const searchItems = search.map((ent,index) => {
+    return (
+    <div key={index} className="card">
+      <div className="card-header">
+        <h3 className="title">{ent.title}</h3>
+        <div className="dateTime"> <span>{ent.created_at}</span>3 days ago</div>
+      </div>
+      <pre className="article">{ent.comment_text}</pre>
+      <link className="url" href=""/>
+      <a className="discussionUrl" href={ent.story_url}>Link ...</a>
+    </div>);
+  }
+
+  // <li>{JSON.stringify(ent)}</li>
   );
-
-  // const searchItems = search.map((ent,index) =>
-  //   <li key={Object.keys(index)}> {Object.values(ent)} </li>
-  // );
-
-  // const searchItems = search.map((ent,index) =>
-  //     <li key={index}> {ent} </li>
-  //   );
 
   return (
     <div className="App">
@@ -58,16 +63,9 @@ function App() {
         onChange={e => onChangeHandler(e.target.value)}
         value={query} 
         />
+        <div>{searchItems}</div>
         <div>
-          <ul>{searchItems}</ul>
-
-          {/* <ul>{search && search.map((now,i)=>{
-                <li key={i}> {now} </li>
-          })}</ul> */}
-
-          {/* <ul>{matches && matches.map((now,i)=>{
-                return(<li key={i}> {now} </li>)
-          })}</ul> */}
+        
         </div>
       </div>
     </div>
