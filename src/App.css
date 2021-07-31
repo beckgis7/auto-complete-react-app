@@ -35,6 +35,10 @@ ul li {
   border-color: cadetblue;
   box-shadow: 2px 3px 4px 2px #a9b3b3;
 }
+.input:active{
+  border-radius: 40px;
+  border: 2px solid cadetblue;
+}
 .search{
   border: #769ea0 1px solid;
   border-radius: 10px;
